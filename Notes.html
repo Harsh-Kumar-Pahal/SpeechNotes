@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Notes</title>
+
+    <style>
+        body{
+            background-color: #ececec; /* Light background */
+            /* padding: -1%; */
+            padding-top:28px; 
+            margin: 0;
+            overflow-x: hidden;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font for better readability */
+
+        }
+        .titleName{
+            font-weight: bold;
+            color: rgb(0, 170, 255);
+            text-shadow: 3px 3px 1px rgb(0, 0, 0);
+        }
+        #start-btn{
+            width: 50px;
+            height: 50px;
+            background-color:  rgb(0, 183, 255);
+            margin-left: 2px;
+            padding: 6px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            cursor:pointer;
+            color: white;
+            transition: 0.4s;
+        }
+        #start-btn:hover{
+            box-shadow: 4px 4px 10px rgb(0, 102, 255)inset, -4px -4px 10px rgb(0, 102, 255)inset;
+            transition:  0.4s;
+        }
+
+        #stop-btn{
+            width: 50px;
+            height: 50px;
+            background-color:  rgb(0, 183, 255);
+            padding: 6px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition:  0.4s;
+        }
+        #stop-btn:hover{
+            box-shadow: 3px 3px 10px rgb(255, 0, 17)inset, -3px -3px 10px rgb(255, 0, 17)inset;
+            transition:  0.4s;
+        }
+
+        #del{
+            transform: translateY(-6%);
+            width: 50px;
+            height: 50px;
+            background-color:  rgb(0, 183, 255);
+            padding: 6px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition:  0.4s;
+        }
+        #del:hover{
+            box-shadow: 3px 3px 10px rgb(251, 64, 64)inset, -3px -3px 10px rgb(251, 64, 64)inset;
+            transition:  0.4s;
+        }
+         img{
+            width: 40px;
+            background-color: none;
+            transform: translate(-40%, -5%);
+            cursor:pointer;
+         }
+
+         .actionBtn{
+            position: fixed;
+            background-color:  rgb(0, 183, 255);
+            padding: 5px;
+            padding-left: 4px;
+            padding-right: 6px;
+            width: 212px;
+            height: 50px;
+            border-radius: 10px;
+            margin-left: 20px;
+            /* border: 2px solid rgb(95, 94, 94); */
+            margin-bottom: -100px;
+            z-index: 10;
+            box-shadow: 5px 5px 25px rgba(184, 184, 184, 0.595);
+            transform: translateY(-120%);
+         }
+
+         .navBar{
+            width: 120%;
+            height: 50px;
+            background-color: #ffffff; /* Light background */
+            transform: translate(-8.3%, -60%);
+            padding-top: 6px;
+            padding-bottom: 10px;
+            margin-bottom: 56px;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgb(171, 171, 171);
+         }
+
+         .links{
+            margin-top: 10px;
+            text-align: right;
+            margin-right: 20px;
+         }
+
+         .links a{
+            text-decoration: none;
+         }
+
+         .note {
+            /* border: 1px solid black; */
+            /* border-left: 2px solid rgb(73, 73, 73); */
+            padding: 10px;
+            /* border-top: 7px solid rgb(0, 213, 255); */
+            color: black;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            transition: 0.2s;
+        }
+        .note:hover{
+            background-color: rgb(224, 224, 224);
+            transition: 0.1s;
+
+        }
+        .footer{
+            margin-top: 230px;
+            background-color: #fff; /* White background for footer */
+            color: #333; /* Dark text color */
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ccc; /* Add border on top */
+        }
+
+        /* a{
+            color: white;
+        } */
+
+        #download-btn{
+            background: none;
+            border: none;
+            font-size: 33px;
+            cursor:pointer;
+            background-color:  rgb(0, 183, 255);
+            border-radius: 6px;
+            padding-top: 3px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-bottom: 4px;
+            transition:  0.4s;
+        }
+
+        #download-btn:hover{
+            box-shadow: 3px 3px 10px rgb(13, 255, 0)inset, -3px -3px 10px rgb(13, 255, 0)inset;
+            transition:  0.4s;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 10px; /* Optional: Add some margin between the links */
+        }
+        #NotebookName{
+            width: 200px;
+            text-align: center;
+            background-color: #FCE08F;
+            color: white;
+            text-shadow: 2px 1px 3px black;
+            border-bottom: none;
+            padding: 5px;
+            margin-left: 20px;
+            /* padding-top: 15px; */
+            border-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            transform: translateY(45%);
+            box-shadow: 7px 0px 0px #ffd760;
+        }
+
+        #notebook {
+            margin-left: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+#openNotebook {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#openNotebook:hover {
+    background-color: #0056b3;
+}
+
+.search{
+    transform: translateY(-400%);
+}
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="navBar">
+        <!-- <code> <h2 class="titleName" >VoiceNotes</h2> </code> -->
+        <!-- <a href="home.html"> <img src="images/not.png" alt=""> </a> -->
+        
+       
+        <a style="text-decoration: none;" href="index.html"> <b> <p style="color: rgb(0, 157, 255); font-size: 30px; margin-top: 10px;">Speech Notes</p> </b>    </div> </a>
+    <div class="actionBtn">
+        <button id="start-btn"> Start </button>
+        <button id="stop-btn"> Stop </button>
+        <button id="del" style="margin-bottom: 10px;"> Erase </button>
+        <button id="download-btn" style="transform: translate(334%, -125%)"> 📥 </button>
+    </div>
+    <div>
+        <input id="notebook" type="text" placeholder="Enter notebook name">
+        <button id="openNotebook" onclick="setNotebookname()">Open</button>
+
+    </div>
+   
+    <h1 id="NotebookName">Notebook</h1>
+
+    
+
+    
+
+<div style="padding: 15px; border-radius: 10px; border-top-left-radius: 0px; background-color: #FCE08F; box-shadow: 7px 7px 0px #ffd760; margin: 20px;">
+    <div id="output-container" ></div> 
+
+</div>
+
+
+
+<div class="footer">
+    <div class="social-links">
+        <a href="https://twitter.com/HarshKumarPahal"><img src="x.webp" alt="" style="width: 30px; transform: translateY(-25%); margin-right: 25px;"></a>
+        <a href="https://www.youtube.com/channel/UCM7A9obgmpmmRIDdKiiL77g"><img src="y.webp" alt="" style="width: 45px;"></a>
+        <a href="https://www.linkedin.com/in/harsh-kumar-ba5508257/"><img src="in.webp" alt="" style="width: 45px;"></a>
+    </div>
+    <p>© 2024 Speech Notes. All rights reserved.</p>
+</div>
+
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function() {
+            // Get the text content from the output-container
+            const notesText = document.getElementById('output-container').innerText;
+    
+            // Create a Blob with the text content
+            const blob = new Blob([notesText], { type: 'text/plain' });
+    
+            // Create a temporary anchor element
+            const a = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+    
+            // Set the anchor's href attribute to the Blob's URL
+            a.href = url;
+    
+            // Set the file name
+            a.download = 'Notes.txt';
+    
+            // Append the anchor to the body and trigger the click event
+            document.body.appendChild(a);
+            a.click();
+    
+            // Remove the anchor from the body
+            document.body.removeChild(a);
+    
+            // Revoke the Blob URL
+            URL.revokeObjectURL(url);
+        });
+
+        function setNotebookname() {
+    const notebook = document.getElementById('notebook').value;
+    localStorage.setItem('notebook', notebook);
+    setStoredNotebookname(); // Call the function to update the displayed notebook name
+
+    setTimeout(() => {
+        window.location.reload();
+    }, 500); // Reload after 2 seconds (2000 milliseconds)
+}
+
+function setStoredNotebookname() {
+    const notebookname = localStorage.getItem('notebook');
+    if (notebookname) {
+        document.getElementById('NotebookName').innerText = notebookname; // Corrected variable name
+    }
+}
+
+// Call setStoredNotebookname() when the page loads
+window.addEventListener('load', setStoredNotebookname);
+
+
+
+    </script>
+    
+
+<script type="module" src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+<script type="module" defer src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js"></script>
+<script type="module" src="notes.js"></script>
+
+</body>
+</html>
+
+
+
+
+

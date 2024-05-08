@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Notes</title>
+
+    <style>
+
+        body{
+            background-color: #ffffff; /* Light background */
+            padding: 0;
+            margin: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font for better readability */
+        }
+
+        .navBar{
+            height: 50px;
+            background-color: #fff; /* White background for navbar */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 20px;
+            border-bottom: 1px solid rgb(190, 190, 190);
+            box-shadow: 2px 2px 5px rgb(171, 171, 171);        }
+
+        .navBar img{
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .navBar p {
+            margin: 0;
+            color: #333; /* Dark text color */
+            font-size: 20px;
+        }
+
+        .hero-page-design{
+            background-color: #fff; /* White background for main content */
+            padding: 0px 20px; /* Add padding for content */
+            text-align: center;
+
+        }
+        .hero-page-design img{
+            z-index: 100;
+            position: absolute;
+            scale: 0.2;
+        }
+
+        .hero-page-design h1{
+            color: #333; /* Dark text color */
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .block_design{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px; /* Add space between cards and footer */
+        }
+
+        .block_design img{
+            border-radius: 15px;
+            scale: 0.7;
+            background:linear-gradient(45deg, rgb(234, 234, 234), #dbdbdb);
+        }
+
+        .box1{
+            width: 100px; /* Set width of each card to 25% of the container width minus margin */
+            margin: 10px; /* Add margin between cards */
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: white; /* Light gray background for cards */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow for depth */
+            transition: all 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .box1:hover{
+            transform: translateY(-5px); /* Lift card on hover */
+            box-shadow: 2px 2px 20px rgb(136, 135, 135);
+        }
+
+        .box1 img{
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .box1 p{
+            color: #666; /* Dark gray text color */
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footer{
+            margin-top: 40px;
+            background-color: #fff; /* White background for footer */
+            color: #333; /* Dark text color */
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ccc; /* Add border on top */
+        }
+
+        .social-links a{
+            color: #333; /* Dark text color for social links */
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .logo1 img{
+            border-radius: 12px;
+            transition: 1s;
+            box-shadow: 0px 10px 10px rgb(139, 139, 139);
+        }
+
+        .logo2 img{
+            border-radius: 12px;
+            transition: 1s;
+            box-shadow: 0px 10px 10px rgb(139, 139, 139);
+        }
+
+        .tag:hover{
+            transition: 1s;
+            text-decoration: underline;
+        }
+
+        .fileAnimate{
+            transition: 1s;
+            rotate: -45deg;
+        }
+        
+
+        /* Media Query for Mobile Devices */
+        @media only screen and (max-width: 600px) {
+            .block_design {
+                margin-bottom: -20px;
+                flex-direction: column; /* Stack cards vertically on small screens */
+                align-items: center; /* Center align cards */
+            }
+
+            .box1 {
+                margin-bottom: 10px;
+                width: 80%; /* Adjust card width for better fit on small screens */
+            }
+
+            .navBar p {
+                font-size: 18px; /* Reduce font size for better fit on small screens */
+            }
+
+            .hero-page-design h1 {
+                font-size: 28px; /* Reduce font size for better fit on small screens */
+            }
+        }
+
+        /* Media Query for Big Screens */
+        @media only screen and (min-width: 1200px) {
+            .block_design {
+                flex-wrap: wrap; /* Allow cards to wrap onto new line */
+            }
+
+            .box1 {
+                width: calc(25% - 20px); /* Set width of each card */
+            }
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="navBar">
+        <b> <p style="color: rgb(0, 157, 255);">Speech Notes</p> </b>
+        <a href="Notes.html"> <p>Notes</p> </a>
+    </div>
+    <div>
+        <p>
+         
+        </p>
+    </div>
+    <div style="background-color: white;">
+        <img style="float: right;" src="pho1.png" width="350px" alt="">
+    </div>
+
+    <div class="hero-page-design">
+        <h1 class="tag" style="transform: translateY(200%);">Speak To Take Notes</h1>
+        <img src="folder.png" width="800px" style="transform: translate(250%,-170%);">
+        <img  src="mick.png" width="800px" style="transform: translate(90%,25%);">
+        <img class="fileAnimate" src="file.png" width="800px" style="transform: translate(-280%,-350%);">
+        <p style="font-size: 35px; font-family: fantasy; margin-top: 150px;">
+            "Speak Your Mind,<br>
+            Watch Your Words: Where Thoughts Transform into Text!"
+        </p>
+    </div>
+
+    <div class="block_design" style="margin-top: 500px; background-color: #dbdbdb; padding:20px;">
+        <div class="box1">
+            <img src="mi.png" alt="">
+            <p>The easiest way to accomplish tasks is by speaking. With our AI-powered speech-to-text feature, take notes effortlessly by just speaking. Enhance your note-taking experience with advanced technology.</p>
+        </div>
+        <div class="box1">
+            <img src="docText.png" alt="">
+            <p>Our website offers an AI-powered text summarizer tool, enabling users to condense lengthy texts into concise summaries swiftly. Improve productivity and decision-making by extracting key information efficiently.</p>
+        </div>
+        <div class="box1">
+            <img src="disk.png" alt="">
+            <p>Real-time note storage using Firebase sets our website apart. Say goodbye to local storage as Firebase ensures robust data security and seamless access. Enjoy up-to-date and secure note storage effortlessly.</p>
+        </div>
+    </div>
+
+    <div class="logo1" style="display: flex;">
+        <img src="phy.png" style="width: 800px; margin: 50px;" alt="">
+        <div style="margin-top: 200px; margin-left: 30px;  font-size:21px; font-family: fantasy; box-shadow: 10px 10px orange; height: 100px; padding: 5px; border-radius: 12px;">
+            <p>
+                Weather you want to Ace your next Physics Exam,<br>
+                Make Notes Just by rembering Topics...
+            </p>
+        </div>
+    </div>
+
+    <div class="logo2" style="display: flex; margin-top: 100px; background-color: #dbdbdb; padding: 10px" >
+
+        <div style="margin-top: 200px; margin-left: 30px;  font-size:21px; font-family: fantasy; box-shadow: -10px -10px rgb(89, 255, 0); height: 100px; padding: 5px; border-radius: 12px; background-color: white;">
+            <p>
+                Weather you want to Ace your next Physics Exam,<br>
+                Make Notes Just by rembering Topics...
+            </p>
+        </div>
+
+        <img src="bio.png" style="width: 800px; margin: 50px;" alt="">
+        
+    </div>
+
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://twitter.com/HarshKumarPahal"><img src="x.webp" alt="" style="width: 30px; transform: translateY(-25%);"></a>
+            <a href="https://www.youtube.com/channel/UCM7A9obgmpmmRIDdKiiL77g"><img src="y.webp" alt="" style="width: 45px;"></a>
+            <a href="https://www.linkedin.com/in/harsh-kumar-ba5508257/"><img src="in.webp" alt="" style="width: 45px;"></a>
+        </div>
+        <p>© 2024 Speech Notes. All rights reserved.</p>
+    </div>
+</body>
+</html>
